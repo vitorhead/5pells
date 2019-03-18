@@ -170,11 +170,15 @@ classNavItemElement c =
 navClasses : Model -> Html Msg
 navClasses model = 
     nav [ class "navbar navbar-expand-lg navbar-light bg-light" ]
-        [ a [ class "navbar-brand" ]
+        [ button [ attribute "aria-controls" "navbarSupportedContent", attribute "aria-expanded" "false", attribute "aria-label" "Toggle navigation", class "navbar-toggler", attribute "data-target" "#navbarSupportedContent", attribute "data-toggle" "collapse", type_ "button" ]
+            [ span [ class "navbar-toggler-icon" ]
+                []
+            ]
+        , a [ class "navbar-brand" ]
             [ h1 [ class "display-4" ]
                 [ text <| String.toUpper <| classToStr <| model.currentClass ]
             ]
-        , div [ class "collapse navbar-collapse", id "navbarNav" ]
+        , div [ class "collapse navbar-collapse", id "navbarSupportedContent" ]
             [ ul [ class "navbar-nav" ]
                 (List.map classNavItemElement [Cleric, Druid, Ranger, Bard, Sorcerer, Wizard, Warlock, Paladin])
                 
