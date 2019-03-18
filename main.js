@@ -6305,10 +6305,21 @@ var elm$core$List$map = F2(
 			xs);
 	});
 var elm$core$String$toUpper = _String_toUpper;
+var elm$html$Html$button = _VirtualDom_node('button');
 var elm$html$Html$h1 = _VirtualDom_node('h1');
 var elm$html$Html$nav = _VirtualDom_node('nav');
+var elm$html$Html$span = _VirtualDom_node('span');
 var elm$html$Html$ul = _VirtualDom_node('ul');
+var elm$virtual_dom$VirtualDom$attribute = F2(
+	function (key, value) {
+		return A2(
+			_VirtualDom_attribute,
+			_VirtualDom_noOnOrFormAction(key),
+			_VirtualDom_noJavaScriptOrHtmlUri(value));
+	});
+var elm$html$Html$Attributes$attribute = elm$virtual_dom$VirtualDom$attribute;
 var elm$html$Html$Attributes$id = elm$html$Html$Attributes$stringProperty('id');
+var elm$html$Html$Attributes$type_ = elm$html$Html$Attributes$stringProperty('type');
 var author$project$Main$navClasses = function (model) {
 	return A2(
 		elm$html$Html$nav,
@@ -6318,6 +6329,28 @@ var author$project$Main$navClasses = function (model) {
 			]),
 		_List_fromArray(
 			[
+				A2(
+				elm$html$Html$button,
+				_List_fromArray(
+					[
+						A2(elm$html$Html$Attributes$attribute, 'aria-controls', 'navbarSupportedContent'),
+						A2(elm$html$Html$Attributes$attribute, 'aria-expanded', 'false'),
+						A2(elm$html$Html$Attributes$attribute, 'aria-label', 'Toggle navigation'),
+						elm$html$Html$Attributes$class('navbar-toggler'),
+						A2(elm$html$Html$Attributes$attribute, 'data-target', '#navbarSupportedContent'),
+						A2(elm$html$Html$Attributes$attribute, 'data-toggle', 'collapse'),
+						elm$html$Html$Attributes$type_('button')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						elm$html$Html$span,
+						_List_fromArray(
+							[
+								elm$html$Html$Attributes$class('navbar-toggler-icon')
+							]),
+						_List_Nil)
+					])),
 				A2(
 				elm$html$Html$a,
 				_List_fromArray(
@@ -6344,7 +6377,7 @@ var author$project$Main$navClasses = function (model) {
 				_List_fromArray(
 					[
 						elm$html$Html$Attributes$class('collapse navbar-collapse'),
-						elm$html$Html$Attributes$id('navbarNav')
+						elm$html$Html$Attributes$id('navbarSupportedContent')
 					]),
 				_List_fromArray(
 					[
